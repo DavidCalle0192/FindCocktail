@@ -1,18 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:id="@+id/sty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageView
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="50dp"
+            android:src="@drawable/logo" />
+
+        <TextView
+            android:id="@+id/bol"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="Ciudad | Cócteles | Diversión"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:textSize="20sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="bottom"
+            android:layout_margin="20dp">
+
+            <Button
+                android:id="@+id/login"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/radio_button"
+                android:backgroundTint="@color/black"
+                android:text="INICIAR SESIÓN"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:layout_weight="1"/>
+
+            <Button
+                android:id="@+id/register"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="REGISTRARSE"
+                android:background="@drawable/radio_button"
+                android:backgroundTint="@color/white"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
