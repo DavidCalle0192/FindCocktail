@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "752814172018",
+    "project_id": "findcocktail-eebf9",
+    "storage_bucket": "findcocktail-eebf9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:752814172018:android:afab2900910c3c9bd05feb",
+        "android_client_info": {
+          "package_name": "com.david.findcocktail"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "752814172018-affu9e3sq8q7se7brugl3pu0s0h799jo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.david.findcocktail",
+            "certificate_hash": "64fc9eac915119da9924169ad81f33e24f0041ec"
+          }
+        },
+        {
+          "client_id": "752814172018-lv7dpc67o4pbavdev5l16b95pvuqol5v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDG_2n-55Cp7Yodg53COv2h8UsNJuh-gnY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "752814172018-lv7dpc67o4pbavdev5l16b95pvuqol5v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -14,10 +14,14 @@
         android:orientation="vertical"
         >
 
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="80dp" />
+
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="300dp"
-            android:layout_height="200dp"
+            android:layout_width="230dp"
+            android:layout_height="150dp"
             android:layout_gravity="center"
             app:srcCompat="@drawable/logo" />
 
@@ -26,7 +30,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Registrate"
+            android:text="Ingresar"
             android:textSize="30sp" />
 
         <LinearLayout
@@ -45,10 +49,12 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_marginLeft="5dp"
                 >
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txtEmail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Correo electronico"
@@ -76,9 +82,11 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_marginLeft="5dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_height="wrap_content">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txtPassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Contraseña"
@@ -90,7 +98,7 @@
         </LinearLayout>
         <Space
             android:layout_width="match_parent"
-            android:layout_height="30dp" />
+            android:layout_height="125dp" />
 
         <ImageView
             android:id="@+id/imageView2"
@@ -105,11 +113,14 @@
             android:gravity="bottom">
 
             <Button
+                android:id="@+id/btn_Login"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="INGRESAR"
+                android:textSize="15sp"
+                android:background="@color/black"
                 android:backgroundTint="@color/black"
-                android:layout_margin="30dp"
+                android:layout_margin="10dp"
                 android:textColor="@color/white" />
 
         </LinearLayout>
