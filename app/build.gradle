@@ -60,4 +60,6 @@ dependencies {
 
     // Progres dialog
     //implementation 'com.github.d-max:spots-dialog:1.1@aar'
+    implementation 'androidx.appcompat:appcompat:1.4.2'
+
 }
