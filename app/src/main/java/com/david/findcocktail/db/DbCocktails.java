@@ -54,7 +54,7 @@ public class DbCocktails  extends DbHelper{
         for(Cocktail cocktail : cocktailList)
             for(Ingredient ingredient: cocktail.getIngredients())
                 for (String search : ingredientArray)
-                    if(ingredient.getName().contains(search))
+                    if(ingredient.getName().contains(search.trim().toLowerCase()))
                         result.add(cocktail);
         return result;
     }
