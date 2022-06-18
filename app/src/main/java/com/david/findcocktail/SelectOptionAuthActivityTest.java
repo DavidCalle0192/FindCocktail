@@ -9,7 +9,7 @@ import android.os.Bundle;
 //hola
 
 
-public class SelectOptionAuthActivity extends AppCompatActivity {
+public class SelectOptionAuthActivityTest extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
