@@ -47,9 +47,12 @@ public class DbCocktails  extends DbHelper{
         return null;
     }
 
-    public List<Cocktail> searchByIngredients(String ingredients){
-        String[] ingredientArray = ingredients.trim().split(",");
+    public List<Cocktail> getByIngredients(String ingredients){
         List<Cocktail> cocktailList = getAll();
+        if(ingredients.trim().isEmpty()) {
+            return cocktailList;
+        }
+        String[] ingredientArray = ingredients.trim().split(",");
         List<Cocktail> result = new ArrayList<>();
         for(Cocktail cocktail : cocktailList)
             for(Ingredient ingredient: cocktail.getIngredients())
