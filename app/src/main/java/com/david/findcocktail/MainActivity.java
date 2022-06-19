@@ -26,6 +26,12 @@ public class MainActivity extends AppCompatActivity {
                 goToLogin();
             }
         });
+        /*btn_register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goToCocktail();
+            }
+        });*/
 
         btn_register.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,6 +48,12 @@ public class MainActivity extends AppCompatActivity {
 
     private void goToLogin() {
         Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+        startActivity(intent);
+    }
+
+    private void goToCocktail() {
+        Intent intent = new Intent(MainActivity.this, CocktailActivity.class);
+        intent.putExtra("idCocktail", 2);
         startActivity(intent);
     }
 }
