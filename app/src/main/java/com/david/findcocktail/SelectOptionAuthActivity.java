@@ -57,4 +57,16 @@ public class SelectOptionAuthActivity extends AppCompatActivity {
         Intent intent = new Intent(SelectOptionAuthActivity.this, LoginActivity.class);
         startActivity(intent);
     }
+
+    /*private void goToCocktail() {
+        Intent intent = new Intent(SelectOptionAuthActivity.this, CocktailActivity.class);
+        intent.putExtra("idCocktail", 2);
+        startActivity(intent);
+    }*/
+
+    private void goToCocktail() {
+        Intent intent = new Intent(SelectOptionAuthActivity.this, CocktailActivity.class);
+        intent.putExtra("idCocktail", 10);
+        startActivity(intent);
+    }
 }
