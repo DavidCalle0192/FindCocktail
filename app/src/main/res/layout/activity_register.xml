@@ -52,7 +52,8 @@
                 app:startIconDrawable="@drawable/ic_user"
                 app:counterMaxLength="20"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_marginLeft="5dp">
+                android:layout_marginLeft="5dp"
+                >
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/txt_User"
