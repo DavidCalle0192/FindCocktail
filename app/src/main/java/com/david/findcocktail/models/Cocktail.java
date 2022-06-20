@@ -11,6 +11,7 @@ public class Cocktail {
     private String preparation;
     private List<Ingredient> ingredients;
 
+
     public int getId() {
         return id;
     }

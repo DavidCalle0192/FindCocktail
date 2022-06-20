@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void goToCocktail() {
         Intent intent = new Intent(MainActivity.this, CocktailActivity.class);
-        intent.putExtra("idCocktail", 2);
+        intent.putExtra("idCocktail", 10);
         startActivity(intent);
     }
 }
