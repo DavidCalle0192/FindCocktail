@@ -62,8 +62,9 @@ public class CocktailActivity extends AppCompatActivity {
             info.setText(this.infoCocktail.getInfo());
             autor.setText(this.infoCocktail.getAuthor());
             preparacion.setText(this.infoCocktail.getPreparation());
-            String nameImage = this.infoCocktail.getImage().replace(".png", "");
-            int idImage = getResources().getIdentifier(nameImage, "drawable", getPackageName());
+            //String nameImage = this.infoCocktail.getImage().replace(".png", "");
+            //String nameImage = this.infoCocktail.getImage();
+            int idImage = getResources().getIdentifier(this.infoCocktail.getImage(), "drawable", getPackageName());
             imagen.setImageResource(idImage);
             String ingredientsText = transformIngredientes(this.infoCocktail.getIngredients());
             ingredientes.setText(ingredientsText);
