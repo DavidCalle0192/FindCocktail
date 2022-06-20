@@ -15,7 +15,7 @@
         >
         <Space
             android:layout_width="match_parent"
-            android:layout_height="80dp" />
+            android:layout_height="20dp" />
 
         <ImageView
             android:id="@+id/imageView"
@@ -47,7 +47,10 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Nombre completo"
+                android:hint="Usuario"
+                app:counterEnabled="true"
+                app:startIconDrawable="@drawable/ic_user"
+                app:counterMaxLength="20"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_marginLeft="5dp">
 
@@ -80,6 +83,8 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                app:helperText="requerido*"
+                app:startIconDrawable="@drawable/ic_baseline_email_24"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_marginLeft="5dp"
                 >
@@ -113,6 +118,9 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_marginLeft="5dp"
+                app:helperText="requerido*"
+                app:endIconMode="password_toggle"
+                app:startIconDrawable="@drawable/ic_lock"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_height="wrap_content">
 
@@ -130,31 +138,56 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="45dp" />
+            android:layout_height="30dp" />
 
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="257dp"
-            android:layout_height="66dp"
+        <LinearLayout
+            android:id="@+id/btns_logins_register"
+            android:layout_width="200dp"
+            android:layout_height="70dp"
             android:layout_gravity="center"
-            app:srcCompat="@drawable/login_ext" />
+            android:layout_margin="1dp"
+            android:gravity="bottom|center"
+            android:orientation="horizontal">
+
+
+            <ImageButton
+                android:id="@+id/imgBtn_google_register"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/google" />
+
+            <ImageButton
+                android:id="@+id/imgBtn_facebook_register"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/facebook" />
+
+            <ImageButton
+                android:id="@+id/imgBtn_microsoft_register"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/microsoft" />
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:gravity="bottom">
+            android:gravity="center">
 
             <Button
                 android:id="@+id/btn_Register"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="INGRESAR"
-                android:textSize="15sp"
+                android:layout_margin="10dp"
                 android:background="@color/black"
                 android:backgroundTint="@color/black"
-                android:layout_margin="10dp"
-                android:textColor="@color/white" />
+                android:text="INGRESAR"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
 
         </LinearLayout>
 

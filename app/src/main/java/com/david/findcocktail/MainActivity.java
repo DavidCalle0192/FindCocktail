@@ -1,11 +1,11 @@
 package com.david.findcocktail;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -14,6 +14,13 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+
+
+        }
+        setTheme(R.style.Theme_SplashScreen);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
