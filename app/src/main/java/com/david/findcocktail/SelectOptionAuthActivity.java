@@ -43,7 +43,7 @@ public class SelectOptionAuthActivity extends AppCompatActivity {
         btn_register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                goToRegister();
+                goToCocktail();
             }
         });
     }
