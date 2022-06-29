@@ -135,8 +135,8 @@ public class ListCocktailActivity extends AppCompatActivity implements CallBackI
         myAdapterRecyclerView.removeItem(viewHolder.getAdapterPosition());
 
         //showing snaclbar for undo
-        Snackbar snackbar = Snackbar.make(layout,name+"Remove..!",Snackbar.LENGTH_LONG);
-        snackbar.setAction("UNDO", new View.OnClickListener() {
+        Snackbar snackbar = Snackbar.make(layout,name+" Eliminado",Snackbar.LENGTH_LONG);
+        snackbar.setAction("DESHACER", new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 myAdapterRecyclerView.restoreItem(deletedItem,deletedIndex);
