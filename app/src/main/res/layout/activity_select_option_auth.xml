@@ -41,7 +41,7 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="20dp" />
+            android:layout_height="110dp" />
 
         <TextView
             android:id="@+id/textView6"
@@ -53,7 +53,7 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="20dp" />
+            android:layout_height="10dp" />
 
         <ImageView
             android:id="@+id/imageView8"
@@ -115,6 +115,19 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="Una aplicación para los amantes de los cocteles. Explora y prepara fácilmente con ingredientes que tienes en casa. ¡Que esperas para preparar tu bebida favorita!" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="45dp" />
+
+        <Button
+            android:id="@+id/btn_listCoc"
+            android:layout_width="320dp"
+            android:layout_height="45dp"
+            android:background="@color/black"
+            android:text="VER CÓCTELES"
+            android:textColor="@color/white"
+            android:textStyle="bold"/>
 
     </LinearLayout>
 

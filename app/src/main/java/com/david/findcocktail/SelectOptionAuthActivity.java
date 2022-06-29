@@ -16,6 +16,7 @@ public class SelectOptionAuthActivity extends AppCompatActivity {
 
     Button btn_login;
     Button btn_register;
+    Button btn_list_coctels;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +33,7 @@ public class SelectOptionAuthActivity extends AppCompatActivity {
 
         btn_login = findViewById(R.id.btnLogin);
         btn_register = findViewById(R.id.btnRegister);
+        btn_list_coctels = findViewById(R.id.btn_listCoc);
 
         btn_login.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -46,6 +48,13 @@ public class SelectOptionAuthActivity extends AppCompatActivity {
                 goToRegister();
             }
         });
+
+        btn_list_coctels.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToList();
+            }
+        });
     }
 
     private void goToRegister() {
@@ -55,6 +64,11 @@ public class SelectOptionAuthActivity extends AppCompatActivity {
 
     private void goToLogin() {
         Intent intent = new Intent(SelectOptionAuthActivity.this, LoginActivity.class);
+        startActivity(intent);
+    }
+
+    private void goToList() {
+        Intent intent = new Intent(SelectOptionAuthActivity.this, ListCocktailActivity.class);
         startActivity(intent);
     }
 
