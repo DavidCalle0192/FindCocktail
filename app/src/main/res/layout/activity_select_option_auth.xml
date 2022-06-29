@@ -96,7 +96,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Jhoan Huertado" />
+            android:text="Jhoan Hurtado" />
 
         <TextView
             android:id="@+id/textView12"
@@ -114,7 +114,7 @@
             android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Una aplicación para los amantes de los cocteles. Explora y prepara fácilmente con ingredientes que tienes en casa. ¡Que esperas para preparar tu bebida favorita!" />
+            android:text="Una aplicación para los amantes de los cócteles. Explora y prepara fácilmente con ingredientes que tienes en casa. ¡Que esperas para preparar tu bebida favorita!" />
 
         <Space
             android:layout_width="match_parent"
