@@ -1,5 +1,6 @@
 package com.david.findcocktail;
 
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -17,6 +18,7 @@ import com.david.findcocktail.models.Item;
 import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ListCocktailActivity extends AppCompatActivity implements CallBackItemTouch {
 
@@ -66,34 +68,35 @@ public class ListCocktailActivity extends AppCompatActivity implements CallBackI
 
     private void initList() {
 
-        list.add(new Item(R.drawable.c01,"test","desctest"));
-        list.add(new Item(R.drawable.c02,"test","desctest"));
-        list.add(new Item(R.drawable.c03,"test","desctest"));
-        list.add(new Item(R.drawable.c04,"test","desctest"));
-        list.add(new Item(R.drawable.c05,"test","desctest"));
-        list.add(new Item(R.drawable.c06,"test","desctest"));
-        list.add(new Item(R.drawable.c07,"test","desctest"));
-        list.add(new Item(R.drawable.c01,"test","desctest"));
-        list.add(new Item(R.drawable.c02,"test","desctest"));
-        list.add(new Item(R.drawable.c03,"test","desctest"));
-        list.add(new Item(R.drawable.c04,"test","desctest"));
-        list.add(new Item(R.drawable.c05,"test","desctest"));
-        list.add(new Item(R.drawable.c06,"test","desctest"));
-        list.add(new Item(R.drawable.c07,"test","desctest"));
-        list.add(new Item(R.drawable.c01,"test","desctest"));
-        list.add(new Item(R.drawable.c02,"test","desctest"));
-        list.add(new Item(R.drawable.c03,"test","desctest"));
-        list.add(new Item(R.drawable.c04,"test","desctest"));
-        list.add(new Item(R.drawable.c05,"test","desctest"));
-        list.add(new Item(R.drawable.c06,"test","desctest"));
-        list.add(new Item(R.drawable.c07,"test","desctest"));
-        list.add(new Item(R.drawable.c01,"test","desctest"));
-        list.add(new Item(R.drawable.c02,"test","desctest"));
-        list.add(new Item(R.drawable.c03,"test","desctest"));
-        list.add(new Item(R.drawable.c04,"test","desctest"));
-        list.add(new Item(R.drawable.c05,"test","desctest"));
-        list.add(new Item(R.drawable.c06,"test","desctest"));
-        list.add(new Item(R.drawable.c07,"test","desctest"));
+        //list.add(new Item(R.id.));
+        list.add(new Item(R.drawable.c01,"Margarita","Pulsa para ver cocktel"));
+        list.add(new Item(R.drawable.c02,"Mojito","Pulsa para ver cocktel"));
+        list.add(new Item(R.drawable.c03,"Gintonic","Pulsa para ver cocktel"));
+        list.add(new Item(R.drawable.c04,"Caipirinha","Pulsa para ver cocktel"));
+        list.add(new Item(R.drawable.c05,"Manhattan","Pulsa para ver cocktel"));
+        list.add(new Item(R.drawable.c06,"Piña colada","Pulsa para ver cocktel"));
+        list.add(new Item(R.drawable.c07,"Daiquiri","Pulsa para ver cocktel"));
+        list.add(new Item(R.drawable.c01,"Cosmopolitan","Pulsa para ver cocktel"));
+        list.add(new Item(R.drawable.c02,"Martini","Pulsa para ver cocktel"));
+        list.add(new Item(R.drawable.c03,"Long Island","Pulsa para ver cocktel"));
+        list.add(new Item(R.drawable.c04,"Bloody Mary","Pulsa para ver cocktel"));
+        list.add(new Item(R.drawable.c05,"Sex on the beach","Pulsa para ver cocktel"));
+        list.add(new Item(R.drawable.c06,"Mai Tai","Pulsa para ver cocktel"));
+        list.add(new Item(R.drawable.c07,"Negroni","Pulsa para ver cocktel"));
+        list.add(new Item(R.drawable.c01,"Rusty Nail","Pulsa para ver cocktel"));
+        list.add(new Item(R.drawable.c02,"Sidecar","Pulsa para ver cocktel"));
+        list.add(new Item(R.drawable.c03,"Coco loco","Pulsa para ver cocktel"));
+        list.add(new Item(R.drawable.c04,"Tom Collins","Pulsa para ver cocktel"));
+        list.add(new Item(R.drawable.c05,"Black Russian","Pulsa para ver cocktel"));
+        list.add(new Item(R.drawable.c06,"White Russian","Pulsa para ver cocktel"));
+        list.add(new Item(R.drawable.c07,"test","Pulsa para ver cocktel"));
+        list.add(new Item(R.drawable.c01,"test","Pulsa para ver cocktel"));
+        list.add(new Item(R.drawable.c02,"test","Pulsa para ver cocktel"));
+        list.add(new Item(R.drawable.c03,"test","Pulsa para ver cocktel"));
+        list.add(new Item(R.drawable.c04,"test","Pulsa para ver cocktel"));
+        list.add(new Item(R.drawable.c05,"test","Pulsa para ver cocktel"));
+        list.add(new Item(R.drawable.c06,"test","Pulsa para ver cocktel"));
+        list.add(new Item(R.drawable.c07,"test","Pulsa para ver cocktel"));
         /*for (int i=0; i < names.length; i++){
             list.add(new Item(image[i],names[i],description));
         }
