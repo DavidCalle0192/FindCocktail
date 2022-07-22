@@ -33,7 +33,7 @@ public class SelectOptionAuthActivity extends AppCompatActivity {
 
         btn_login = findViewById(R.id.btnLogin);
         btn_register = findViewById(R.id.btnRegister);
-        btn_list_coctels = findViewById(R.id.btn_listCoc);
+        //btn_list_coctels = findViewById(R.id.btn_listCoc);
 
         btn_login.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -48,13 +48,14 @@ public class SelectOptionAuthActivity extends AppCompatActivity {
                 goToRegister();
             }
         });
-
+        /*
         btn_list_coctels.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 goToList();
             }
         });
+         */
     }
 
     private void goToRegister() {

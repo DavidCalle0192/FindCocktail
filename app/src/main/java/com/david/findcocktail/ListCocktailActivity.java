@@ -1,5 +1,6 @@
 package com.david.findcocktail;
 
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -13,7 +14,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.david.findcocktail.adapters.MyAdapterRecyclerView;
 import com.david.findcocktail.callbacks.MyItemTouchHelperCallback;
+import com.david.findcocktail.db.DbCocktails;
 import com.david.findcocktail.interfaces.CallBackItemTouch;
+import com.david.findcocktail.models.Cocktail;
 import com.david.findcocktail.models.Item;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -26,34 +29,10 @@ public class ListCocktailActivity extends AppCompatActivity implements CallBackI
     MyAdapterRecyclerView myAdapterRecyclerView;
     ArrayList<Item> list;
     RelativeLayout layout;
+    MyAdapterRecyclerView.RecyclerViewClickListener listener;
+    DbCocktails dbCocktails;
 
-    /*private int image[] = new int[]{
-            R.drawable.c01,
-            R.drawable.c02,
-            R.drawable.c03,
-            R.drawable.c04,
-            R.drawable.c05,
-            R.drawable.c06,
-            R.drawable.c07,
-            R.drawable.c08,
-            R.drawable.c09,
-            R.drawable.c10,
-    };
 
-    private String names[] = new String[]{
-            "test01",
-            "test02",
-            "test03",
-            "test04",
-            "test05",
-            "test06",
-            "test07",
-            "test08",
-            "test09",
-            "test10",
-    };
-
-    String description = "holi";*/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,61 +41,36 @@ public class ListCocktailActivity extends AppCompatActivity implements CallBackI
         //recyclerView.setAdapter(myAdapterRecyclerView);
         layout = findViewById(R.id.RLM);
         list = new ArrayList<>();
+        dbCocktails = new DbCocktails(ListCocktailActivity.this);
         initList();
         viewData();
     }
 
     private void initList() {
-
-        //list.add(new Item(R.id.));
-        list.add(new Item(R.drawable.c01,"Margarita","Pulsa para ver cocktel"));
-        list.add(new Item(R.drawable.c02,"Mojito","Pulsa para ver cocktel"));
-        list.add(new Item(R.drawable.c03,"Gintonic","Pulsa para ver cocktel"));
-        list.add(new Item(R.drawable.c04,"Caipirinha","Pulsa para ver cocktel"));
-        list.add(new Item(R.drawable.c05,"Manhattan","Pulsa para ver cocktel"));
-        list.add(new Item(R.drawable.c06,"Piña colada","Pulsa para ver cocktel"));
-        list.add(new Item(R.drawable.c07,"Daiquiri","Pulsa para ver cocktel"));
-        list.add(new Item(R.drawable.c01,"Cosmopolitan","Pulsa para ver cocktel"));
-        list.add(new Item(R.drawable.c02,"Martini","Pulsa para ver cocktel"));
-        list.add(new Item(R.drawable.c03,"Long Island","Pulsa para ver cocktel"));
-        list.add(new Item(R.drawable.c04,"Bloody Mary","Pulsa para ver cocktel"));
-        list.add(new Item(R.drawable.c05,"Sex on the beach","Pulsa para ver cocktel"));
-        list.add(new Item(R.drawable.c06,"Mai Tai","Pulsa para ver cocktel"));
-        list.add(new Item(R.drawable.c07,"Negroni","Pulsa para ver cocktel"));
-        list.add(new Item(R.drawable.c01,"Rusty Nail","Pulsa para ver cocktel"));
-        list.add(new Item(R.drawable.c02,"Sidecar","Pulsa para ver cocktel"));
-        list.add(new Item(R.drawable.c03,"Coco loco","Pulsa para ver cocktel"));
-        list.add(new Item(R.drawable.c04,"Tom Collins","Pulsa para ver cocktel"));
-        list.add(new Item(R.drawable.c05,"Black Russian","Pulsa para ver cocktel"));
-        list.add(new Item(R.drawable.c06,"White Russian","Pulsa para ver cocktel"));
-        list.add(new Item(R.drawable.c07,"test","Pulsa para ver cocktel"));
-        list.add(new Item(R.drawable.c01,"test","Pulsa para ver cocktel"));
-        list.add(new Item(R.drawable.c02,"test","Pulsa para ver cocktel"));
-        list.add(new Item(R.drawable.c03,"test","Pulsa para ver cocktel"));
-        list.add(new Item(R.drawable.c04,"test","Pulsa para ver cocktel"));
-        list.add(new Item(R.drawable.c05,"test","Pulsa para ver cocktel"));
-        list.add(new Item(R.drawable.c06,"test","Pulsa para ver cocktel"));
-        list.add(new Item(R.drawable.c07,"test","Pulsa para ver cocktel"));
-        /*for (int i=0; i < names.length; i++){
-            list.add(new Item(image[i],names[i],description));
+        List<Cocktail> cocktailList = dbCocktails.getAll();
+        for(Cocktail cocktail : cocktailList) {
+            int idImage = getResources().getIdentifier(cocktail.getImage(), "drawable", getPackageName());
+            list.add(new Item(idImage, cocktail.getId(), cocktail.getName(), "Pulsa para ver cóctel"));
         }
-
-        //stup recycler view
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        myAdapterRecyclerView = new MyAdapterRecyclerView(list);
-        recyclerView.setAdapter(myAdapterRecyclerView);
-        ItemTouchHelper.Callback callback = new MyItemTuchHelperCallBack(this);
-        ItemTouchHelper touchHelper = new ItemTouchHelper(callback);
-        touchHelper.attachToRecyclerView(recyclerView);*/
     }
 
     public void viewData(){
+        setOnClickListener();
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        myAdapterRecyclerView = new MyAdapterRecyclerView(list);
+        myAdapterRecyclerView = new MyAdapterRecyclerView(list, listener);
         recyclerView.setAdapter(myAdapterRecyclerView);
         ItemTouchHelper.Callback callback = new MyItemTouchHelperCallback(this);
         ItemTouchHelper touchHelper = new ItemTouchHelper(callback);
         touchHelper.attachToRecyclerView(recyclerView);
+    }
+
+    private void setOnClickListener() {
+        listener = new MyAdapterRecyclerView.RecyclerViewClickListener() {
+            @Override
+            public void onClick(View v, int position) {
+                goToCocktail(list.get(position).getIdCocktail());
+            }
+        };
     }
 
     @Override
@@ -147,6 +101,12 @@ public class ListCocktailActivity extends AppCompatActivity implements CallBackI
         });
         snackbar.setActionTextColor(Color.GREEN);
         snackbar.show();
+    }
+
+    private void goToCocktail(int id) {
+        Intent intent = new Intent(ListCocktailActivity.this, CocktailActivity.class);
+        intent.putExtra("idCocktail", id);
+        startActivity(intent);
     }
 
     /*

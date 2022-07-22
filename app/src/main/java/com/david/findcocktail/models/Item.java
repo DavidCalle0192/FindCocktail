@@ -3,15 +3,27 @@ package com.david.findcocktail.models;
 public class Item {
 
     private int idImage;
-    private String name, description;
+    private int idCocktail;
+    private String name;
+    private String description;
+
 
     public Item() {
     }
 
-    public Item(int idImage, String name, String description) {
+    public Item(int idImage,int idCocktail, String name, String description) {
+        this.idCocktail = idCocktail;
         this.idImage = idImage;
         this.name = name;
         this.description = description;
+    }
+
+    public int getIdCocktail() {
+        return idCocktail;
+    }
+
+    public void setIdCocktail(int idCocktail) {
+        this.idCocktail = idCocktail;
     }
 
     public int getIdImage() {

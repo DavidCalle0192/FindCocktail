@@ -1,5 +1,6 @@
 package com.david.findcocktail;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -120,7 +121,8 @@ public class LoginActivity extends AppCompatActivity{
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
-                            Toast.makeText(LoginActivity.this, "Bienvenido!!",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginActivity.this, "Bienvenido",Toast.LENGTH_SHORT).show();
+                            goToList();
                         }
                         else{
                             Toast.makeText(LoginActivity.this, "Usuario o contraseña incorrecto", Toast.LENGTH_SHORT).show();
@@ -135,6 +137,11 @@ public class LoginActivity extends AppCompatActivity{
         else{
             Toast.makeText(this, "El usuario y contraseña son obligatorios",Toast.LENGTH_SHORT).show();
         }
+    }
+
+    private void goToList() {
+        Intent intent = new Intent(LoginActivity.this, ListCocktailActivity.class);
+        startActivity(intent);
     }
 
 

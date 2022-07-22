@@ -60,7 +60,7 @@ public class CocktailActivity extends AppCompatActivity {
         if (this.infoCocktail != null) {
             nombre.setText(this.infoCocktail.getName());
             info.setText(this.infoCocktail.getInfo());
-            autor.setText(this.infoCocktail.getAuthor());
+            autor.setText("@" + this.infoCocktail.getAuthor());
             preparacion.setText(this.infoCocktail.getPreparation());
             //String nameImage = this.infoCocktail.getImage().replace(".png", "");
             //String nameImage = this.infoCocktail.getImage();
